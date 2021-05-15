@@ -49,13 +49,22 @@ describe('Ajax Error Handler', () => {
 		expect(errorMessageHandler).toHaveBeenCalledWith(
 			'ReqMsg Message: Error message Status: 500 Response Message: Hello World'
 		);
+		expect(unauthorizedHandler).not.toHaveBeenCalled();
 	});
 
 	it('handles axios 401 error', () => {
-		throw new Error();
+		ajaxErrorHandler(401, axiosError, 'ReqMsg');
+		expect(errorMessageHandler).toHaveBeenCalledWith(
+			'ReqMsg Message: Error message Status: 401 Response Message: Hello World'
+		);
+		expect(unauthorizedHandler).toHaveBeenCalled();
 	});
 
 	it('handles other error', () => {
-		throw new Error();
+		ajaxErrorHandler(0, error, 'ReqMsg');
+		expect(errorMessageHandler).toHaveBeenCalledWith(
+			'ReqMsg Message: Error message'
+		);
+		expect(unauthorizedHandler).not.toHaveBeenCalled();
 	});
 });
