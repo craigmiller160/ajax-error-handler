@@ -1,0 +1,7 @@
+{
+  "name": "@craigmiller160/ajax-error-handler",
+  "version": "1.0.0-beta",
+  "author": "craigmiller160",
+  "main": "index.js",
+  "license": "MIT"
+}
