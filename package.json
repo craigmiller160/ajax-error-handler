@@ -2,6 +2,17 @@
   "name": "@craigmiller160/ajax-error-handler",
   "version": "1.0.0-beta",
   "author": "craigmiller160",
-  "main": "index.js",
-  "license": "MIT"
+  "publishConfig": {
+    "registry": "https://craigmiller160.ddns.net:30003/repository/npm-private/"
+  },
+  "files": [
+    ".yalc",
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@craigmiller160/es-lint-config": "^1.1.0-beta",
+    "@craigmiller160/react-web-config": "^2.11.0-beta"
+  }
 }
