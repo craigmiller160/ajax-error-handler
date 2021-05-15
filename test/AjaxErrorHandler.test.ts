@@ -1,8 +1,11 @@
 import createAjaxErrorHandler, { AjaxErrorHandlerConfig } from '../src';
 import { AxiosError } from 'axios';
 
-const responseMessageExtractor = jest.fn()
-	.mockImplementation((response: { data: { message: string } }) => response.data.message);
+const responseMessageExtractor = jest
+	.fn()
+	.mockImplementation(
+		(response: { data: { message: string } }) => response.data.message
+	);
 const errorMessageHandler = jest.fn();
 const unauthorizedHandler = jest.fn();
 
@@ -43,8 +46,9 @@ describe('Ajax Error Handler', () => {
 
 	it('handles axios error', () => {
 		ajaxErrorHandler(500, axiosError, 'ReqMsg');
-		expect(errorMessageHandler)
-			.toHaveBeenCalledWith('ReqMsg Message: Error message Status: 500 Response Message: Hello World');
+		expect(errorMessageHandler).toHaveBeenCalledWith(
+			'ReqMsg Message: Error message Status: 500 Response Message: Hello World'
+		);
 	});
 
 	it('handles axios 401 error', () => {
