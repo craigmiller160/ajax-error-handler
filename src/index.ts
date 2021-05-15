@@ -11,7 +11,7 @@ export interface AjaxErrorHandlerConfig {
 }
 
 const createAjaxErrorHandler = (
-	config: AjaxErrorHandlerConfig
+	config?: AjaxErrorHandlerConfig
 ): DefaultErrorHandler => {
 	return (status: number, error: Error, requestMessage?: string): void => {
 		if (status > 0 && (error as AxiosError).response) {
@@ -19,7 +19,7 @@ const createAjaxErrorHandler = (
 				.response;
 			if (response) {
 				const responseMsg =
-					config.responseMessageExtractor?.(response) ?? '';
+					config?.responseMessageExtractor?.(response) ?? '';
 				const fullResponseMsg = responseMsg
 					? `Response Message: ${responseMsg}`
 					: '';
@@ -28,15 +28,15 @@ const createAjaxErrorHandler = (
 					error
 				);
 				const fullMsg = `${errorMsg} Status: ${status} ${fullResponseMsg}`;
-				config.errorMessageHandler?.(fullMsg);
+				config?.errorMessageHandler?.(fullMsg);
 			}
 
 			if (status === 401) {
-				config.unauthorizedHandler?.();
+				config?.unauthorizedHandler?.();
 			}
 		} else {
 			const errorMsg = getFullErrorMessage(requestMessage || '', error);
-			config.errorMessageHandler?.(errorMsg);
+			config?.errorMessageHandler?.(errorMsg);
 		}
 	};
 };
