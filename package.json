@@ -8,7 +8,8 @@
   "scripts": {
     "lint": "es-lint-scripts ts",
     "test": "web-config-scripts test",
-    "build": "es-lint-scripts ts && web-config-scripts test && web-config-scripts buildTSLib"
+    "build": "es-lint-scripts ts && web-config-scripts test && web-config-scripts buildTSLib",
+    "forceBuild": "web-config-scripts buildTSLib"
   },
   "files": [
     ".yalc",
