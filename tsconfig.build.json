@@ -19,15 +19,15 @@
     "jsx": "react",
     "declaration": true,
     "module": "es2015",
-    "outDir": "/home/craig/Development/Libraries/ajax-error-handler/lib"
+    "outDir": "./lib"
   },
   "include": [
-    "/home/craig/Development/Libraries/ajax-error-handler/src/**/*"
+    "./src/**/*"
   ],
   "exclude": [
-    "/home/craig/Development/Libraries/ajax-error-handler/node_modules",
-    "/home/craig/Development/Libraries/ajax-error-handler/lib",
-    "/home/craig/Development/Libraries/ajax-error-handler/build",
-    "/home/craig/Development/Libraries/ajax-error-handler/.yalc"
+    "./node_modules",
+    "./lib",
+    "./build",
+    "./.yalc"
   ]
 }

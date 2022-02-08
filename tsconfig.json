@@ -21,13 +21,13 @@
     "module": "es2015"
   },
   "include": [
-    "/home/craig/Development/Libraries/ajax-error-handler/src/**/*",
-    "/home/craig/Development/Libraries/ajax-error-handler/test/**/*"
+    "./src/**/*",
+    "./test/**/*"
   ],
   "exclude": [
-    "/home/craig/Development/Libraries/ajax-error-handler/node_modules",
-    "/home/craig/Development/Libraries/ajax-error-handler/lib",
-    "/home/craig/Development/Libraries/ajax-error-handler/build",
-    "/home/craig/Development/Libraries/ajax-error-handler/.yalc"
+    "./node_modules",
+    "./lib",
+    "./build",
+    "./.yalc"
   ]
 }
